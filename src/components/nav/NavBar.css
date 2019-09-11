@@ -1,0 +1,18 @@
+#signUpLabel:hover {
+    color: #007bff;
+    cursor: pointer;
+}
+
+#signInLabel:hover {
+    color: #007bff;
+    cursor: pointer;
+}
+
+#logoutDiv:hover {
+    cursor: pointer;
+    color: #007bff;
+}
+#smartDiv:hover {
+    cursor: pointer;
+    color: #007bff;
+}

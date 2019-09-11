@@ -1,0 +1,7 @@
+#footerFirRow>div>a {
+    color: black;
+}
+
+#footerFirRow>.col-md-auto {
+    margin: auto;
+}

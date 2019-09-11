@@ -1,0 +1,9 @@
+.detailModal {
+    width: 90% !important;
+    max-width: 1248px !important;
+}
+
+
+.navClass::-webkit-scrollbar {
+    display: none;
+}
