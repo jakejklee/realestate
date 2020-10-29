@@ -88,9 +88,21 @@ class HomeModal extends React.Component<Props, State> {
                         <div style={{ position: 'absolute', height: 250, width: '100%', borderBottom: '1px solid #e1e1e1' }}>
                             <Row style={{ borderBottom: '1px solid #e1e1e1', width: '96%', margin: 'auto', }}>
                                 <Col md='auto' style={{ padding: 0 }}>
-                                    <Image src='https://firebasestorage.googleapis.com/v0/b/eeum-home.appspot.com/o/renieLogo.png?alt=media&token=123066fd-9887-410d-b4d4-09e87b2f7672'
+                                    {/* <Image src='https://firebasestorage.googleapis.com/v0/b/eeum-home.appspot.com/o/renieLogo.png?alt=media&token=123066fd-9887-410d-b4d4-09e87b2f7672'
                                         height='50px' style={{ padding: '5px 0', margin: 5 }}>
-                                    </Image>
+                                    </Image> */}
+                                    <Col md='auto'>
+                                        <Row style={{ textAlign: 'center' }}>
+                                            <Col>
+                                                COMPANY
+                                            </Col>
+                                        </Row>
+                                        <Row style={{ textAlign: 'center' }}>
+                                            <Col>
+                                                LOGO
+                                            </Col>
+                                        </Row>
+                                    </Col>
                                 </Col>
                                 <Col>
                                     <Row style={{ float: 'right', lineHeight: '50px', color: primaryColor, fontWeight: 'bold' }}>

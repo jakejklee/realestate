@@ -75,7 +75,7 @@ class MapPage extends React.Component<Props, State> {
         } else {
             console.log('no location')
         }
-        firebase.firestore().collection('bidding').doc('wacQO4FlxR1KTjD7Bul8').get().then((result) => {
+        firebase.firestore().collection('bidding').doc('biddingDetail').get().then((result) => {
             const data = result.data();
             if (data) {
                 this.props.getPremiumID(data.homeID);
@@ -99,11 +99,11 @@ class MapPage extends React.Component<Props, State> {
                 const charAddress = address.split('');
                 const centerLabel = charAddress.length / 2 * 5;
                 const infoObj = {
-                    houseLocation:{'lat':lat, 'lng':lng},
-                    housePrice:price,
-                    houseAddress:info.data().houseAddress,
-                    houseUnit:info.data().houseUnit,
-                    houseID:info.id
+                    houseLocation: { 'lat': lat, 'lng': lng },
+                    housePrice: price,
+                    houseAddress: info.data().houseAddress,
+                    houseUnit: info.data().houseUnit,
+                    houseID: info.id
                 }
 
                 if (monthlyRentFee > 0) {
@@ -305,17 +305,16 @@ class MapPage extends React.Component<Props, State> {
             </MarkerWithLabel>
         ];
 
-        if (this.state.mapZoom > 11) {
-            if (_.size(zoomLess11Markers) >= 1) {
-                return zoomLess11Markers;
-            } else {
-
-                return this.state.markers;
-            }
-            // return zoomLess11Markers;
+        // if (this.state.mapZoom > 11) {
+        if (_.size(zoomLess11Markers) >= 1) {
+            return zoomLess11Markers;
         } else {
-            return zoomOver11Markers;
+
+            return this.state.markers;
         }
+        // } else {
+        //     return zoomOver11Markers;
+        // }
     }
     private toggleSearchOption = () => {
         this.setState({ searchOption: !this.state.searchOption });

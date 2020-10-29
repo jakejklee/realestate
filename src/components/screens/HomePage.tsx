@@ -94,7 +94,7 @@ class HomePage extends React.Component<Props, State> {
                     onMouseEnter={() => { this.setState({ mouseOnAnnouncement: true }) }}
                     onMouseLeave={() => { this.setState({ mouseOnAnnouncement: false }) }}
                 >
-                    <Link to='announcement' style={{ color: 'black', textDecoration: 'none', width: '100%' }}>Announcement{i}</Link>
+                    <Link to='announcement' style={{ color: 'black', width: '100%' }}>Announcement{i}</Link>
                 </Row>
             );
         }
@@ -107,7 +107,7 @@ class HomePage extends React.Component<Props, State> {
         for (let i = 0; i < 5; i++) {
             if (_.size(this.state.newsData) > 3) {
                 let reducedTitle = this.state.newsData[i].title.slice(0, 28);
-                let linkAddress = this.state.newsData[i].link.replace('https://','//')
+                let linkAddress = this.state.newsData[i].link.replace('https://', '//')
                 newsArr.push(
                     <Row key={'news' + i} style={{ marginBottom: 10, fontSize: '15px', }}
                         // <Row key={'announcement' + i} style={{ marginBottom: 10, fontSize: '15px', background: this.state.mouseOnAnnouncement ? 'grey' : 'white' }}
@@ -115,7 +115,7 @@ class HomePage extends React.Component<Props, State> {
                         onMouseLeave={() => { this.setState({ mouseOnNews: false }) }}
                     >
                         <Link to={linkAddress} target='_blank'
-                            style={{ color: 'black', textDecoration: 'none', width: '100%' }}>
+                            style={{ color: 'black', width: '100%' }}>
                             {reducedTitle + ' ...'}</Link>
                     </Row>
                 );
@@ -170,8 +170,8 @@ class HomePage extends React.Component<Props, State> {
                                     backgroundImage: `url(${mainImg})`,
                                 }}>
 
-                                <Image src={mainLogo}
-                                    style={{ position: 'absolute', top: 92, left: '42%', height: '45%' }} />
+                                {/* <Image src={mainLogo}
+                                    style={{ position: 'absolute', top: 92, left: '42%', height: '45%' }} /> */}
 
                                 <div style={{
                                     position: 'absolute',
@@ -329,9 +329,12 @@ class HomePage extends React.Component<Props, State> {
                                     <Col style={{ width: 260 }}>
                                         <Link to='' style={{ color: 'black', textAlign: 'center' }}>
                                             <div style={{ border: '1px solid #1a9bd7', width: 260, height: 200, textDecoration: 'none' }}>
-                                                <Image src={detailImg} width={258} height={170} />
-                                                How to use Renie
-                                                </div>
+                                                <Image src={detailImg} width={258} height={'100%'} />
+                                                <div style={{
+                                                    position: 'absolute',
+                                                    marginTop: -180, color: '#ffffff', fontSize: '30px', fontWeight: 700, marginLeft: '10px'
+                                                }}>Selling a home?</div>
+                                            </div>
                                         </Link>
                                     </Col>
                                     <Col style={{ width: 260 }}>
@@ -437,9 +440,23 @@ class HomePage extends React.Component<Props, State> {
                                 </Col>
                             </Row>
                             <Row style={{ borderTop: '1px solid #d8d8d8' }}>
-                                <Link to='/' style={{ margin: 'auto', fontSize: 20 }}>
+                                {/* <Link to='/' style={{ margin: 'auto', fontSize: 20 }}>
                                     <Image style={{ height: 50, margin: '20px 0' }}
                                         src='https://firebasestorage.googleapis.com/v0/b/eeum-home.appspot.com/o/renieLogo.png?alt=media&token=123066fd-9887-410d-b4d4-09e87b2f7672' />
+                                </Link> */}
+                                <Link to='/' style={{ margin: 'auto', fontSize: 20, textDecoration: 'none' }}>
+                                    {/* <Image src='https://firebasestorage.googleapis.com/v0/b/eeum-home.appspot.com/o/renieLogo.png?alt=media&token=123066fd-9887-410d-b4d4-09e87b2f7672'
+                                        style={{ height: 40 }} /> */}
+                                    <Row style={{ textAlign: 'center' }}>
+                                        <Col>
+                                            COMPANY
+                                            </Col>
+                                    </Row>
+                                    <Row style={{ textAlign: 'center' }}>
+                                        <Col>
+                                            LOGO
+                                            </Col>
+                                    </Row>
                                 </Link>
                             </Row>
                         </div>

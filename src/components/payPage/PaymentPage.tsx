@@ -40,7 +40,7 @@ class PaymentPage extends React.Component<Props, State> {
     }
 
     componentDidMount = () => {
-        firebase.firestore().collection('bidding').doc('wacQO4FlxR1KTjD7Bul8').get()
+        firebase.firestore().collection('bidding').doc('biddingDetail').get()
             .then((result) => {
                 const data = result.data();
                 if (data) {
@@ -53,35 +53,30 @@ class PaymentPage extends React.Component<Props, State> {
     private renderPeriod = () => {
         const currentDay = new Date();
         const today = new Date();
-        console.log(today);
         // const firstDay = 8 + 7 - 0;
         const firstDay = currentDay.getDate() + 7 - currentDay.getDay();
         const lastDay = firstDay + 6;
         const firstData = new Date(currentDay.setDate(firstDay));
         const lastData = new Date(currentDay.setDate(lastDay));
 
-        console.log(today.getDay());
-        console.log(today);
         if (today.getDay() == 0) {
-            firebase.firestore().collection('bidding').doc('wacQO4FlxR1KTjD7Bul8').get()
+            firebase.firestore().collection('bidding').doc('biddingDetail').get()
                 .then((result) => {
                     const biddingData = result.data();
                     if (biddingData) {
                         if (biddingData.bidAmount > 0 && biddingData.isReset === false) {
                             const bidValue = 0
-                            firebase.firestore().collection('bidding').doc('wacQO4FlxR1KTjD7Bul8')
+                            firebase.firestore().collection('bidding').doc('biddingDetail')
                                 .update({
                                     bidAmount: bidValue,
                                     isReset: true,
                                 })
                             this.setState({ currBid: bidValue });
-                            console.log(this.state.currBid)
-                            console.log(this.state.bidAmount)
                         }
                     }
                 })
         } else {
-            firebase.firestore().collection('bidding').doc('wacQO4FlxR1KTjD7Bul8')
+            firebase.firestore().collection('bidding').doc('biddingDetail')
                 .update({
                     isReset: false,
                 })
@@ -126,7 +121,7 @@ class PaymentPage extends React.Component<Props, State> {
                 housePrice: this.props.housePrice,
             })
                 .then((result) => {
-                    firebase.firestore().collection('bidding').doc('wacQO4FlxR1KTjD7Bul8')
+                    firebase.firestore().collection('bidding').doc('biddingDetail')
                         .update({
                             cardNumber: this.state.cardNumber,
                             cardName: this.state.cardName,

@@ -306,7 +306,7 @@ class NavBar extends React.Component<Props, State> {
     }
 
     private addData = () => {
-        if (this.state.userInfo.email === 'master@renie.com') {
+        if (this.state.userInfo.email === 'master@real.com') {
             this.setState({ addingModal: true });
         }
     }
@@ -477,9 +477,19 @@ class NavBar extends React.Component<Props, State> {
                     <Col md='auto'>
                         <Row>
                             <Col md='auto'>
-                                <Link to='/' style={{ height: 40 }}>
-                                    <Image src='https://firebasestorage.googleapis.com/v0/b/eeum-home.appspot.com/o/renieLogo.png?alt=media&token=123066fd-9887-410d-b4d4-09e87b2f7672'
-                                        style={{ height: 40 }} />
+                                <Link to='/' style={{ height: 40, textDecoration: 'none' }}>
+                                    {/* <Image src='https://firebasestorage.googleapis.com/v0/b/eeum-home.appspot.com/o/renieLogo.png?alt=media&token=123066fd-9887-410d-b4d4-09e87b2f7672'
+                                        style={{ height: 40 }} /> */}
+                                    <Row style={{ textAlign: 'center' }}>
+                                        <Col>
+                                            COMPANY
+                                            </Col>
+                                    </Row>
+                                    <Row style={{ textAlign: 'center' }}>
+                                        <Col>
+                                            LOGO
+                                            </Col>
+                                    </Row>
                                 </Link>
                             </Col>
                             <Col md='auto' style={{ height: '100%', marginLeft: '25px', cursor: 'pointer', textAlign: 'center', }}
@@ -735,7 +745,8 @@ class NavBar extends React.Component<Props, State> {
                                     color: '#ffffff',
                                     float: 'right',
                                     marginTop: 2.5
-                                }} onClick={() => { this.addData() }}>AGENT SIGN UP</div>
+                                }} onClick={() => { this.addData() }}>
+                                    {this.state.userInfo.email === 'master@real.com' ? 'SELL A HOUSE' : 'AGENT SIGN UP'}</div>
                                 {/* }} >AGENT SIGN UP</div> */}
                             </Col>
                         </Row>
@@ -744,7 +755,7 @@ class NavBar extends React.Component<Props, State> {
                         <Modal
                             // size="sm"
                             show={this.state.addingModal}
-                            onHide={() => this.setState({ addingModal: false, isPremium:false })}
+                            onHide={() => this.setState({ addingModal: false, isPremium: false })}
                             aria-labelledby="example-modal-sizes-title-sm"
                         >
                             <Modal.Header closeButton>

@@ -34,6 +34,7 @@ class PremiumList extends React.Component<Props, State> {
         const houseArr: any = [];
         for (let i = 0; i < houseData.length; i++) {
             if (houseData[i].houseID === this.props.premiumID) {
+                console.log('working?')
                 houseArr.push(
                     <div style={{ margin: '10px 0 0 10px', border: '1px solid #000000' }} onClick={() => { this.toggleModal(houseData[i]) }}>
                         <Row style={{
@@ -82,6 +83,7 @@ class PremiumList extends React.Component<Props, State> {
         return houseArr;
     }
     render() {
+        console.log(this.props)
         const modalData = {
             modalHide: () => { this.toggleModal(false) },
             modalOpen: this.state.detailModal,

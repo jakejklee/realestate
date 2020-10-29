@@ -1,15 +1,15 @@
 import firebase from 'firebase';
 
-  // Initialize Firebase
-  var firebaseConfig = {
-    apiKey: "AIzaSyANhCXn9dRilPCh8Damk2FvNKHjhpC39Rw",
-    authDomain: "eeum-home.firebaseapp.com",
-    databaseURL: "https://eeum-home.firebaseio.com",
-    projectId: "eeum-home",
-    storageBucket: "eeum-home.appspot.com",
-    messagingSenderId: "155851174099",
-    appId: "1:155851174099:web:512ac758c3dbd059"
-  };
-  firebase.initializeApp(firebaseConfig);
+// Initialize Firebase
+var firebaseConfig = {
+  apiKey: "AIzaSyBt7KJBx6egkk1i9zImboiSGD3ZggAUhx0",
+  authDomain: "real-estate-eaa79.firebaseapp.com",
+  databaseURL: "https://real-estate-eaa79.firebaseio.com",
+  projectId: "real-estate-eaa79",
+  storageBucket: "",
+  messagingSenderId: "59286563581",
+  appId: "1:59286563581:web:f1a71bdc766e765c79ec94"
+};
+firebase.initializeApp(firebaseConfig);
 
-  export default firebase;
+export default firebase;
